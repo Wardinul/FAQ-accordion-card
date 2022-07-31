@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    
+    /* text  */
+    --very-dark-desaturated-blue:hsl(238, 29%, 16%);
+    --soft-red:hsl(14, 88%, 65%);
+
+    /* background  */
+    --soft-violet:hsl(273, 75%, 66%);
+    --soft-blue:hsl(240, 73%, 65%);
+
+    /* text  */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue:hsl(240, 6%, 50%);
+
+    /* dividers  */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(223deg, var(--soft-violet) 0%, var(--soft-blue) 49%, var(--soft-blue) 100%); 
+    min-height: 100vh;
+}
+
+img{
+    max-width: 100%;
+}
+
+.main-card{
+    display: flex;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -480px -245px;
+    max-width: 900px;
+    max-height: 480px;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    padding: 4em 0;
+    margin: 0 1em;
+    border-radius: 25px;
+}
+
+.main-card > div {
+    width: 50%;
+}
+
+.card-image{
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.woman-img{
+    max-width: 500px;
+    margin-left: -4.5em;
+}
+
+.box-img{
+    position: absolute;
+    left:-5.8em;
+    top: 12.5em;
+    z-index: 999;
+}
+
+.card-text{
+    max-height: 360px;
+    padding: 0 3em;
+    font-family:"Kumbh Sans";
+}
+
+.card-text h1{
+    margin-bottom: .5em;
+    color: var(--very-dark-desaturated-blue);
+}
+
+.item{
+    padding: 1em 0;
+    border-bottom: 1px solid var(--light-grayish-blue);
+    cursor: pointer;
+}
+
+.question{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--very-dark-grayish-blue);
+    transition: .2s;
+}
+
+.question:hover{
+    color: var(--soft-red);
+}
+
+.question::after{
+    content: '';
+	margin-right: 10px;
+	width: 15px;
+	height: 12px;
+	background-image: url(images/icon-arrow-down.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: rgba(255, 255, 255, 0);
+	transform: rotate(180deg);
+    transition: .2s;
+}
+
+.question.active::after{
+	  transform: rotate(0deg);
+}
+
+.response{
+    display: none;
+    color: var(--dark-grayish-blue);
+    margin-top: .5em;
+}
+
+.active{
+    font-weight: bold;
+}
+
+footer{
+    margin: 1em 0;
+    color: white;
+    font-family:"Kumbh Sans";
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media screen and (max-width:900px) {
+    body{
+        height: 120vh;
+    }
+    .main-card{
+        flex-direction: column;
+        max-width: 380px;
+        min-width: 330px;
+        min-height: 75vh;
+        padding: 0 1.5em 4em 1.5em;
+        background-image: url(images/bg-pattern-mobile.svg);
+        background-size: 75%;
+        background-repeat: no-repeat;
+        background-position: 3em 0;
+    }
+    .main-card > div{
+        width: 100%;
+    }
+    .box-img{
+        display: none;
+    }
+    .card-image{
+        overflow: visible;
+        max-height: 150px;
+    }
+    .woman-img{
+        max-width: 280px;
+        position: absolute;
+        top: -8em;
+        left: 29%;
+    }
+    .card-text{
+        padding: 0;
+    }
+    .card-text h1{
+        text-align: center;
+        margin-top: 4em;
+    }
+    .item{
+        min-width: 300px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .card-text{
+        font-size: 15px;
+    }
+}
+
