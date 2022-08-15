@@ -31,6 +31,7 @@ body{
     flex-direction: column;
     background: linear-gradient(223deg, var(--soft-violet) 0%, var(--soft-blue) 49%, var(--soft-blue) 100%); 
     min-height: 100vh;
+    padding: 0 1em;
 }
 
 img{
@@ -49,12 +50,12 @@ img{
     background-color: white;
     position: relative;
     padding: 4em 0;
-    margin: 0 1em;
     border-radius: 25px;
     box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.36);
 }
 
-.main-card > div {
+.card-image,
+.card-text{
     width: 50%;
 }
 
@@ -85,7 +86,7 @@ img{
 }
 
 .card-text h1{
-    margin-bottom: .5em;
+    margin: .5em 0;
     color: var(--very-dark-desaturated-blue);
 }
 
@@ -149,21 +150,50 @@ footer a{
 }
 
 @media screen and (max-width:900px) {
+    .main-card{
+        max-width: 650px;
+        max-height: 100%;
+        padding: 2em 0;
+        background-position: -360px -215px;
+    }
+    .card-image{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .card-image img{
+        max-width: 100%;
+    }
+    .box-img{
+        width: 150px;
+        top: 7.3em;
+        left: -4.4em;
+    }
+    .card-text{
+        padding: 0;
+        font-size: smaller;
+        padding-right: 2em;
+    }
+}
+
+@media screen and (max-width:680px) {
     body{
-        height: 120vh;
+        height: 130vh;
     }
     .main-card{
+        position: relative;
         flex-direction: column;
         max-width: 380px;
         min-width: 330px;
-        min-height: 75vh;
-        padding: 0 1.5em 4em 1.5em;
+        min-height: 70vh;
+        padding: 0 1.5em 5em 1.5em;
         background-image: url(images/bg-pattern-mobile.svg);
         background-size: 75%;
         background-repeat: no-repeat;
         background-position: 3em 0;
     }
-    .main-card > div{
+    .card-image,
+    .card-text{
         width: 100%;
     }
     .box-img{
@@ -171,13 +201,15 @@ footer a{
     }
     .card-image{
         overflow: visible;
-        max-height: 150px;
+        min-height: 100px;
+        height: 150px;
+        display: block;
     }
     .woman-img{
-        max-width: 280px;
+        min-width: 300px;
         position: absolute;
-        top: -8em;
-        left: 29%;
+        margin: auto;
+        top: -9em;
     }
     .card-text{
         padding: 0;
@@ -189,10 +221,3 @@ footer a{
         min-width: 300px;
     }
 }
-
-@media screen and (max-width:375px) {
-    .card-text{
-        font-size: 15px;
-    }
-}
-
